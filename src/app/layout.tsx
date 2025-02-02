@@ -7,7 +7,7 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "HerSpace - Empowering Women Through Technology",
+  title: "IndependentQueens - Empowering Women Through Technology",
   description: "A platform for women to manage time, track health, and connect with community",
 };
 

@@ -23,3 +23,24 @@ export async function getUserRecommendations(email: string) {
     throw error;
   }
 }
+
+interface SuggestedEvent {
+  id: string;
+  title: string;
+  start: string;
+  end: string;
+  color: string;
+  type: string;
+  reason: string;
+}
+
+export async function getUserSuggestedEvents(email: string): Promise<SuggestedEvent[]> {
+  try {
+    const encodedEmail = email.replace('@', '%40');
+    const response = await apiClient.get(`${baseEndpoint}/${encodedEmail}/suggested-events`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching suggested events:", error);
+    throw error;
+  }
+}

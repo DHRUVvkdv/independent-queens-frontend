@@ -21,6 +21,7 @@ import {
 	Microscope,
 	Music,
 	Palette,
+	Crown,
 } from "lucide-react";
 import { off } from "process";
 
@@ -80,9 +81,9 @@ export default function Marketplace() {
 		<div className="flex min-h-screen flex-col p-8">
 			{/* Header */}
 			<div className="mb-8 flex justify-between items-center">
-				<h1 className="text-3xl font-bold">Browse Lessons From Other Women!</h1>
-				<div className="text-xl">
-					Your Points: <span className="font-bold text-yellow-500">{user.coins}</span>
+				<h1 className="text-3xl font-bold">Browse Lessons From Other Queens! <span>👑</span> </h1>
+				<div className="text-xl font-bold">
+					Your Queen Coins: <span className="font-bold text-purple-400">{user.coins}</span>
 				</div>
 			</div>
 

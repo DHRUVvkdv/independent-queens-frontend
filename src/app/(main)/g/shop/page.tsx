@@ -36,8 +36,8 @@ export default function Shop() {
 		<div className="container mx-auto px-4 py-8">
 			<div className="mb-8 flex justify-between items-center">
 				<h1 className="text-3xl font-bold">Redeem Your Points!</h1>
-				<div className="text-xl">
-					Your Points: <span className="font-bold text-yellow-500">{user.coins}</span>
+				<div className="text-xl font-bold">
+				Your Queen Coins: <span className="font-bold text-purple-400">{user.coins}</span>
 				</div>
 			</div>
 

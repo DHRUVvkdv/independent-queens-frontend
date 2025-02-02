@@ -9,6 +9,7 @@ import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from "recha
 import { RadarChart, Radar, PolarGrid, PolarAngleAxis } from "recharts";
 import { createJournal } from "@/types/journal";
 import { fetchJournalInsights } from "@/types/journal"; // Import the insights function
+import Link from "next/link";
 
 interface NoteEditorProps {
 	notes: any;
@@ -189,13 +190,22 @@ export default function NoteEditor({ notes, setNotes }: NoteEditorProps) {
 						</ResponsiveContainer>
 					</div> */}
 
-					<div className="flex justify-center">
+					<div className="flex justify-center flex-col space-y-5">
 						<Button
-							className="bg-purple-200 hover:bg-purple-300 text-black rounded-2xl px-8"
+							className="bg-purple-200 hover:bg-purple-300 text-black rounded-2xl px-8 block"
 							onClick={() => setShowInsights(false)}
 						>
 							Back to Editor
 						</Button>
+						<div>
+						<Link href="https://www.womenscenter.vt.edu/Resources.html" target="_blank" rel="noopener noreferrer"
+							className="bg-purple-200 hover:bg-purple-300 text-black text-md py-2  rounded-2xl px-8 flex justify-center items-center gap-2"
+				
+						>
+							Wellbeing Resources
+						</Link>
+						</div>
+						
 					</div>
 				</Card>
 			)}

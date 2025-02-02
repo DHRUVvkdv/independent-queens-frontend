@@ -69,7 +69,7 @@ export default function AuthPage() {
 							height={32}
 							className="rounded"
 						/>
-						<span className="font-semibold">IndependentQueen</span>
+						<span className="font-semibold">IndependentQueens</span>
 					</div>
 
 					<div className="flex  justify-center items-center h-[80%]">

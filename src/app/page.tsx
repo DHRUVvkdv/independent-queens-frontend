@@ -65,7 +65,7 @@ export default function Home() {
 			{/* Navigation */}
 			<nav className="absolute top-0 w-full p-6 flex justify-between items-center">
 				<h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-purple-500">
-					HerSpace
+					IndependentQueens
 				</h1>
 				<Link
 					className="px-6 py-2 bg-violet-600 text-white rounded-full hover:bg-violet-700 transition-colors font-medium"
