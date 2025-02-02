@@ -33,3 +33,26 @@ export async function getUserData(email: string) {
     throw error;
   }
 }
+
+export async function fetchCanvasAssignments(email: string) {
+  try {
+    const response = await fetch(
+      `https://t76o3w4uot5gt3ebqio6u4b7jm0nvwfg.lambda-url.us-east-1.on.aws/api/v1/canvas/assignments?email=${email}`,
+      {
+        headers: {
+          'X-API-Key': 'dvrocks',
+          'accept': 'application/json'
+        }
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching Canvas assignments:", error);
+    throw error;
+  }
+}

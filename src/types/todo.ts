@@ -3,6 +3,8 @@ export interface TodoItem {
     title: string
     time: string
     accentColor: string
+    isCanvasAssignment?: boolean
+    courseName?: string
 }
 
 export interface GroupedTodos {

@@ -10,6 +10,8 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import CyclePhaseTracker from "./CyclePhaseTracker"
+import { useUser } from "@/provider/userProvider";
+import { updateUser } from '@/types/user';
 
 interface QuestionnaireData {
     age: string
@@ -19,6 +21,7 @@ interface QuestionnaireData {
 }
 
 const MenstrualQuestionnaire = () => {
+    const { user } = useUser();
     const [currentStep, setCurrentStep] = useState(1)
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [formData, setFormData] = useState<QuestionnaireData>({
@@ -47,9 +50,35 @@ const MenstrualQuestionnaire = () => {
         }
     }
 
-    const handleSubmit = () => {
-        console.log("Form submitted:", formData)
-        setIsSubmitted(true)
+    const handleSubmit = async () => {
+        if (!user?.email) return;
+
+        try {
+            const qaPairs = [
+                {
+                    question: "Do you feel confident about your knowledge about your menstrual health",
+                    answer: formData.age
+                },
+                {
+                    question: "When was the first day of your last period?",
+                    answer: formData.lastPeriodDate ? format(formData.lastPeriodDate, 'yyyy-MM-dd') : ''
+                },
+                {
+                    question: "How long does your period typically last?",
+                    answer: formData.periodDuration
+                },
+                {
+                    question: "How would you describe your mood recently?",
+                    answer: formData.mood
+                }
+            ];
+
+            await updateUser(user.email, { qa_pairs: qaPairs });
+            setIsSubmitted(true);
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            // Handle error appropriately
+        }
     }
 
     const renderQuestion = () => {
@@ -57,16 +86,24 @@ const MenstrualQuestionnaire = () => {
             case 1:
                 return (
                     <div className="space-y-8">
-                        <h2 className="text-2xl text-gray-800">What is your age?</h2>
-                        <Input
-                            type="number"
-                            value={formData.age}
-                            onChange={(e) => handleInputChange("age", e.target.value)}
-                            className="w-full text-xl h-14 border-purple-100 focus:ring-purple-500"  // Added height and purple colors
-                            placeholder="Enter your age"
-                            min="0"
-                            max="100"
-                        />
+                        <h2 className="text-2xl text-gray-800">Do you feel confident about your knowledge about your menstrual health?</h2>
+                        <div className="space-y-4">
+                            {[
+                                { value: "yes", label: "Yes" },
+                                { value: "no", label: "No" },
+                            ].map((option) => (
+                                <label key={option.value} className="flex items-center space-x-3">
+                                    <input
+                                        type="radio"
+                                        value={option.value}
+                                        checked={formData.age === option.value}
+                                        onChange={(e) => handleInputChange("age", e.target.value)}
+                                        className="w-4 h-4 text-purple-600 border-purple-300 focus:ring-purple-500"
+                                    />
+                                    <span className="text-lg text-gray-700">{option.label}</span>
+                                </label>
+                            ))}
+                        </div>
                     </div>
                 )
             case 2:
@@ -198,11 +235,10 @@ const MenstrualQuestionnaire = () => {
                 </>
             ) : (
                 // Cycle Tracker View
-                <CyclePhaseTracker />
+                <CyclePhaseTracker email={user?.email} /> // Add email prop
             )}
         </div>
     )
 }
 
 export default MenstrualQuestionnaire
-
