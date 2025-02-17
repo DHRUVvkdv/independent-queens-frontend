@@ -6,7 +6,7 @@
 ![React](https://img.shields.io/badge/React-19.0.0-61DAFB)
 
 Frontend application for Independent Queens - an AI-powered women's health and empowerment platform. Live at: [https://iqns.dhruvv.dev/](https://iqns.dhruvv.dev/)
-FrontEnd Code: [https://github.com/DHRUVvkdv/independent-queens-backend](https://github.com/DHRUVvkdv/independent-queens-backend)
+BackendEnd Code: [https://github.com/DHRUVvkdv/independent-queens-backend](https://github.com/DHRUVvkdv/independent-queens-backend)
 
 ## 🌟 Features
 
