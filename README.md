@@ -1,45 +1,157 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Independent Queens Frontend
 
-## Getting Started
+![Winner - Capital One's Best Financial Hack](https://img.shields.io/badge/Winner-Capital%20One's%20Best%20Financial%20Hack-blue)
+![HackViolet 2025](https://img.shields.io/badge/HackViolet-2025-purple)
+![Next.js](https://img.shields.io/badge/Next.js-15.1.6-black)
+![React](https://img.shields.io/badge/React-19.0.0-61DAFB)
 
-First, run the development server:
+Frontend application for Independent Queens - an AI-powered women's health and empowerment platform. Live at: [https://iqns.dhruvv.dev/](https://iqns.dhruvv.dev/)
+
+## 🌟 Features
+
+- Personalized AI-driven scheduling system
+- Phase-specific wellness recommendations
+- Real-time health analytics dashboard
+- Skill marketplace interface
+- Canvas LMS integration
+- 3D-enhanced user experience with Three.js
+- Responsive design with Tailwind CSS
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 16+
+- npm or yarn
+- Required API keys and configurations
+
+### Local Development
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/DHRUVvkdv/independent-queens-frontend
+cd independent-queens-frontend
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Set up environment variables:
+
+```bash
+cp .env.example .env.local
+# Edit .env.local with your credentials
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/                 # Next.js pages and routing
+├── components/         # Reusable React components
+├── lib/               # Utilities and helpers
+├── types/             # TypeScript type definitions
+├── styles/            # Global styles
+└── provider/          # Context providers
+```
 
-## Learn More
+## 💻 Technology Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  - Next.js 15.1.6
+  - React 19.0.0
+  - TypeScript
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **UI/UX**:
 
-## Deploy on Vercel
+  - Tailwind CSS
+  - Shadcn UI
+  - Three.js
+  - Lucide React icons
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **State Management**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  - React Context
+  - React Hooks
 
-Feature:
-Added 3-D Effect, improved the colors and the UI.
-Improved project structure
-Improved styling on carousel
-Added the profile page
-I guess more styling and features added for I guess profile page
-More features added, the backend is connected to the frontend.
-Fixed the error on the profile page
+- **Data Visualization**:
+
+  - Recharts
+  - Schedule-X Calendar
+
+- **Development Tools**:
+  - ESLint
+  - TypeScript
+  - Prettier
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Required environment variables:
+
+```env
+NEXT_PUBLIC_APP_API_BASE_URL=
+NEXT_PUBLIC_API_KEY=
+```
+
+## 📱 Features in Detail
+
+1. **Scheduling System**
+
+   - Canvas LMS integration
+   - ICS calendar parsing
+   - AI-optimized scheduling
+   - Real-time updates
+
+2. **Health Tracking**
+
+   - Phase tracking
+   - Personalized recommendations
+   - Wellness analytics
+
+3. **Marketplace**
+
+   - Skill exchange system
+   - Points-based economy
+   - Real-time availability
+
+4. **User Management**
+   - AWS Cognito authentication
+   - Profile management
+   - Security features
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
+
+## 🌟 Acknowledgments
+
+- HackViolet 2025 organizers
+- Capital One for the "Best Financial Hack" award
+- The Association of Women in Computing at Virginia Tech
+
+## 📄 License
+
+MIT License
